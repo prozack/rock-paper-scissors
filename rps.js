@@ -24,7 +24,7 @@ var opponent = function() {
 	    opponent_choice = 'scissors';
     }
 }
-//setting defaults to 0
+//setting default scores to 0
 var wins = 0;
 var losses = 0;
 var draws = 0;
@@ -35,14 +35,19 @@ var game_outcome = function(){
 	console.log("Your choice: ", choice, "Opponent's choice: ", opponent_choice);
   if (choice === 'rock' && opponent_choice === 'scissors' || choice === 'scissors' && opponent_choice === 'paper' || choice === 'paper' && opponent_choice === 'paper'){
 	  wins++;
+	  //write to HTML with updated score
+	  document.getElementById("htmlWins").innerHTML = "Wins: " + wins;
   } else if (choice === 'rock' && opponent_choice === 'paper' || choice === 'scissors' && opponent_choice === 'rock' || choice === 'paper' && opponent_choice === 'scissors'){
       losses++;
+      document.getElementById("htmlLosses").innerHTML = "Losses: " + losses;
   } else {
 	  draws++;
+	  document.getElementById("htmlDraws").innerHTML = "Draws: " + draws;
   }
+  //resetting variables after outcome determined
   choice = undefined;
   opponent_choice = undefined;
-  console.log(wins, losses, draws)
+  console.log("wins: ", wins, "losses: ", losses, "draws: ", draws);
 }
 
 var startTimer = function() {

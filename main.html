@@ -3,7 +3,7 @@
 <head>
 
 <script src="rps.js"></script>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 </head>
 
 <body>
@@ -11,12 +11,16 @@
 <form> 
   Minutes: <input type="text" id="mins"><br>
   Seconds: <input type="text" id="secs"><br>
-  <input type="submit" value="Submit" onclick="startTimer()" />
+  <input type="submit" value="Start" onclick="startTimer()" />
 </form>
 
 <button type="button" onclick="input_choice('rock'); game_outcome()">Rock!</button>
 <button type="button" onclick="input_choice('paper'); game_outcome()">Paper!</button>
 <button type="button" onclick="input_choice('scissors'); game_outcome()">Scissors!</button>
+
+<div id="htmlWins">Wins: 0</div>
+<div id="htmlLosses">Losses: 0</div>
+<div id="htmlDraws">Draws: 0</div>
 
 </body>
 </html>
