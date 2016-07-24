@@ -28,12 +28,14 @@ var opponent = function() {
 var wins = 0;
 var losses = 0;
 var draws = 0;
+//counter to ensure all results are tallied
+var counter;
 
 //determining winner based on choices
 var game_outcome = function(){
 	opponent();
 	console.log("Your choice: ", choice, "Opponent's choice: ", opponent_choice);
-  if (choice === 'rock' && opponent_choice === 'scissors' || choice === 'scissors' && opponent_choice === 'paper' || choice === 'paper' && opponent_choice === 'paper'){
+  if (choice === 'rock' && opponent_choice === 'scissors' || choice === 'scissors' && opponent_choice === 'paper' || choice === 'paper' && opponent_choice === 'rock'){
 	  wins++;
 	  //write to HTML with updated score
 	  document.getElementById("htmlWins").innerHTML = "Wins: " + wins;
@@ -47,7 +49,19 @@ var game_outcome = function(){
   //resetting variables after outcome determined
   choice = undefined;
   opponent_choice = undefined;
-  console.log("wins: ", wins, "losses: ", losses, "draws: ", draws);
+  counter = wins + losses + draws;
+  console.log("wins: ", wins, "losses: ", losses, "draws: ", draws, "counter: ", counter);
+}
+
+//logic to determine winner, to be called when timer reaches zero
+var end_of_game = function() {
+	if (wins > losses) {
+		return "You win!";
+	} else if (wins < losses) {
+		return "You lose!"
+	} else {
+		return "It's a draw!"
+	}
 }
 
 var startTimer = function() {
