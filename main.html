@@ -2,7 +2,7 @@
 <html>
 <head>
 
-<script src="timer.js"></script>
+<script src="rps.js"></script>
 
 </head>
 
@@ -13,6 +13,10 @@
   Seconds: <input type="text" id="secs"><br>
   <input type="submit" value="Submit" onclick="startTimer()" />
 </form>
+
+<button type="button" onclick="input_choice('rock'); game_outcome()">Rock!</button>
+<button type="button" onclick="input_choice('paper'); game_outcome()">Paper!</button>
+<button type="button" onclick="input_choice('scissors'); game_outcome()">Scissors!</button>
 
 </body>
 </html>
