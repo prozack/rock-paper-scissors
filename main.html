@@ -2,21 +2,34 @@
 <html>
 <head>
 
-<script src="rps.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="rps.js"></script>
+<script src="timer.js"></script>
+
+<script>
+  $(document).ready(function() {
+  });
+ </script>
+
 </head>
 
 <body>
 
-<form> 
-  Minutes: <input type="text" id="mins"><br>
-  Seconds: <input type="text" id="secs"><br>
-  <input type="submit" value="Start" onclick="startTimer()" />
+<form>
+Minutes: <input type="text" id="mins" value="0" /><br>
+Seconds: <input type="text" id="secs" value="0" maxlength="2" /><br>
+<input type="button" id="startButton" value="Start" onclick="startTimer(); clearValues()"/>
 </form>
 
-<button type="button" onclick="input_choice('rock'); game_outcome()">Rock!</button>
-<button type="button" onclick="input_choice('paper'); game_outcome()">Paper!</button>
-<button type="button" onclick="input_choice('scissors'); game_outcome()">Scissors!</button>
+Countdown Timer: <span id="displayMins">00</span>:<span id="displaySecs">00</span>
+
+<br>
+<button type="button" onclick="inputChoice('rock'); gameOutcome()">Rock!</button>
+<button type="button" onclick="inputChoice('paper'); gameOutcome()">Paper!</button>
+<button type="button" onclick="inputChoice('scissors'); gameOutcome()">Scissors!</button>
+
+<div id="yourChoice">You chose: </div>
+<div id="botChoice">Opponent chose: </div>
 
 <div id="htmlWins">Wins: 0</div>
 <div id="htmlLosses">Losses: 0</div>
