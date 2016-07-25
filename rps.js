@@ -38,18 +38,26 @@ var counter;
 //determining winner based on choices
 var gameOutcome = function(){
 	opponent();
-    document.getElementById("yourChoice").innerHTML = "You chose: " + choice;
-    document.getElementById("botChoice").innerHTML = "Opponent chose: " + opponentChoice;
+	document.getElementById("yourChoice").classList = "";
+	document.getElementById("botChoice").classList = "";
+    document.getElementById("yourChoice").innerHTML = "You chose: " + "<img src='images/" + choice +".png'>";
+    document.getElementById("botChoice").innerHTML = "Opponent chose: " + "<img src='images/" + opponentChoice +".png'>";
 	console.log("Your choice: ", choice, "Opponent's choice: ", opponentChoice);
   if (choice === 'rock' && opponentChoice === 'scissors' || choice === 'scissors' && opponentChoice === 'paper' || choice === 'paper' && opponentChoice === 'rock'){
 	  wins++;
+	  document.getElementById("yourChoice").classList.add('win');
+	  document.getElementById("botChoice").classList.add('loss');
 	  //write to HTML with updated score
 	  document.getElementById("htmlWins").innerHTML = "Wins: " + wins;
   } else if (choice === 'rock' && opponentChoice === 'paper' || choice === 'scissors' && opponentChoice === 'rock' || choice === 'paper' && opponentChoice === 'scissors'){
       losses++;
+	  document.getElementById("yourChoice").classList.add('loss');
+	  document.getElementById("botChoice").classList.add('win');
       document.getElementById("htmlLosses").innerHTML = "Losses: " + losses;
   } else {
 	  draws++;
+	  document.getElementById("yourChoice").classList.add('draw');
+	  document.getElementById("botChoice").classList.add('draw');
 	  document.getElementById("htmlDraws").innerHTML = "Draws: " + draws;
   }
   //resetting variables after outcome determined
