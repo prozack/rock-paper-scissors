@@ -24,7 +24,9 @@ function startTimer() {
   // if minutes and seconds are 0, enables start button
   if (userMins === 0 && userSecs === 0) {
     startCount = 0;
-    document.getElementById('startButton').removeAttribute('disabled');     
+    document.getElementById('startButton').removeAttribute('disabled'); 
+    //changes start button to restart game when first game ends 
+    document.getElementById('startButton').setAttribute('value', 'Restart');
     //runs end of game calculation when timer reaches 0
     alert(endOfGame());
     //return false to prevent timer reset
