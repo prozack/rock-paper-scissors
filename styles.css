@@ -42,24 +42,3 @@ body {
     height: 130px;  
     width: 130px;
 }
-
-.win img {
-	background: green;
-	display: block;
-    height: 130px;  
-    width: 130px;
-}
-
-.loss img {
-	background: red;
-	display: block;
-    height: 130px;  
-    width: 130px;
-}
-
-.draw img {
-	background: yellow;
-	display: block;
-    height: 130px;  
-    width: 130px;
-}

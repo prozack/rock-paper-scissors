@@ -16,6 +16,12 @@
 
 <body>
 
+Instructions: Rock bashes Scissors.  Scissors cut Paper.  Paper covers Rock.
+<br>
+The eternal struggle.
+<br>
+<br>
+
 <form>
 Minutes: <input type="text" id="mins" value="0" /><br>
 Seconds: <input type="text" id="secs" value="0" maxlength="2" /><br>
@@ -29,8 +35,8 @@ Countdown Timer: <span id="displayMins">00</span>:<span id="displaySecs">00</spa
 <button type="button" class="game" id="gamePaper" onclick="inputChoice('paper'); gameOutcome()" disabled><img src="images/paper.png"></button>
 <button type="button" class="game" id="gameScissors" onclick="inputChoice('scissors'); gameOutcome()" disabled><img src="images/scissors.png"></button>
 
-<div id="yourChoice">You chose: </div>
-<div id="botChoice">Opponent chose: </div>
+<div id="yourChoice">You chose: <img src="images/question.png" style="background-color:white;" width height=130 /></div>
+<div id="botChoice">Opponent chose: <img src="images/question.png" style="background-color:white;" width height=130 /></div>
 
 <div id="htmlWins">Wins: 0</div>
 <div id="htmlLosses">Losses: 0</div>
