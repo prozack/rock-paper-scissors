@@ -70,6 +70,7 @@ var endOfGame = function() {
 	}
 }
 
+//function called when restart button pressed, resets game assets to play new round
 var clearValues = function(){
 	wins = 0;
 	losses = 0;
@@ -77,4 +78,11 @@ var clearValues = function(){
 	document.getElementById("htmlWins").innerHTML = "Wins: " + wins;
 	document.getElementById("htmlLosses").innerHTML = "Losses: " + losses;
 	document.getElementById("htmlDraws").innerHTML = "Draws: " + draws;
+	document.getElementById('displayMins').style.color = "#B2D23E";
+    document.getElementById('displaySecs').style.color = "#B2D23E";
+    document.getElementById('gameRock').removeAttribute('disabled'); 
+    document.getElementById('gamePaper').removeAttribute('disabled'); 
+    document.getElementById('gameScissors').removeAttribute('disabled'); 
 }
+
+

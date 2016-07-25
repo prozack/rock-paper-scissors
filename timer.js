@@ -18,7 +18,11 @@ function startTimer() {
     document.getElementById('mins').value = userMins;
     document.getElementById('secs').value = userSecs;
     startCount = 1;
-    document.getElementById('startButton').setAttribute('disabled', 'disabled');     // disable the button
+    //toggles start button to disabled and enable all game buttons
+    document.getElementById('startButton').setAttribute('disabled', 'disabled');     
+    document.getElementById('gameRock').removeAttribute('disabled'); 
+    document.getElementById('gamePaper').removeAttribute('disabled'); 
+    document.getElementById('gameScissors').removeAttribute('disabled'); 
   }
 
   // if minutes and seconds are 0, enables start button
@@ -29,6 +33,10 @@ function startTimer() {
     document.getElementById('startButton').setAttribute('value', 'Restart');
     //runs end of game calculation when timer reaches 0
     alert(endOfGame());
+    //disables game buttons 
+    document.getElementById('gameRock').setAttribute('disabled', 'disabled'); 
+    document.getElementById('gamePaper').setAttribute('disabled', 'disabled'); 
+    document.getElementById('gameScissors').setAttribute('disabled', 'disabled'); 
     //return false to prevent timer reset
     return false;
   }
@@ -36,6 +44,8 @@ function startTimer() {
   //alert at 10 seconds 
   else if (userMins === 0 && userSecs === 10) {
     console.log("10 seconds left!");
+    document.getElementById('displayMins').style.color = "red";
+    document.getElementById('displaySecs').style.color = "red";
     //decrease seconds to continue countdown
     userSecs--;
   } else {
