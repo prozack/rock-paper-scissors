@@ -1,11 +1,11 @@
 body {
-    background-color: black;
-    color: #B2D23E;
+    background-color: #1a1a00;
+    color: #BABABA;
     font-family: 'Lucida Grande', Helvetica, Arial, Sans-Serif;
 }
 
 #timer {
-	font-size: 30px;
+	font-size: 40px;
 }
 
 #startButton {
@@ -25,7 +25,7 @@ body {
    box-shadow: rgba(0,0,0,1) 0 1px 0;
    text-shadow: rgba(0,0,0,.4) 0 1px 0;
    color: white;
-   font-size: 11px;
+   font-size: 15px;
    font-family: 'Lucida Grande', Helvetica, Arial, Sans-Serif;
    text-decoration: none;
    vertical-align: middle;
@@ -62,3 +62,8 @@ body {
 	font-size: 40px;
 	color: yellow;
 }
+
+#result {
+	font-size: 40px;
+}
+

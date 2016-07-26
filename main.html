@@ -2,6 +2,8 @@
 <html>
 <head>
 
+<title>Rock-Paper-Scissors</title>
+
 <link rel="stylesheet" type="text/css" href="styles.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="rps.js"></script>
@@ -24,27 +26,47 @@ The eternal struggle.
 
 Enter values for game length below then press start!
 <br>
+<br>
 <form>
 Minutes: <input type="text" id="mins" value="0" /><br>
 Seconds: <input type="text" id="secs" value="0" maxlength="2" /><br>
 <input type="button" id="startButton" value="Start" onclick="startTimer(); clearValues()"/>
 </form>
 
+<br>
 <div id="timer">
 Countdown Timer: <span id="displayMins">00</span>:<span id="displaySecs">00</span>
 </div>
 
 <br>
-<button type="button" class="game" id="gameRock" onclick="inputChoice('rock'); gameOutcome()" disabled><img src="images/rock.png"></button>
-<button type="button" class="game" id="gamePaper" onclick="inputChoice('paper'); gameOutcome()" disabled><img src="images/paper.png"></button>
-<button type="button" class="game" id="gameScissors" onclick="inputChoice('scissors'); gameOutcome()" disabled><img src="images/scissors.png"></button>
+<table style="width: 38%">
+  <tr>
+    <td><button type="button" class="game" id="gameRock" onclick="inputChoice('rock'); gameOutcome()" disabled><img src="images/rock.png"></button></td>
+    <td><button type="button" class="game" id="gamePaper" onclick="inputChoice('paper'); gameOutcome()" disabled><img src="images/paper.png"></button></td>
+    <td><button type="button" class="game" id="gameScissors" onclick="inputChoice('scissors'); gameOutcome()" disabled><img src="images/scissors.png"></button></td>
+  </tr>
+</table>
 
-<div id="yourChoice">You chose: <img src="images/question.png" style="background-color:white;" width height=130 /></div>
-<div id="botChoice">Opponent chose: <img src="images/question.png" style="background-color:white;" width height=130 /></div>
+<table style="width: 38%">
+  <tr>
+    <th>Your choice: </th>
+    <th>Opponent's choice: </th>
+  </tr>
+  <tr>
+    <td class="game" id="yourChoice" align="center"><img src="images/question.png" style="background-color:white;" /></td>
+    <td class="game" id="botChoice" align="center"><img src="images/question.png" style="background-color:white;" /></td>
+  </tr>
 
-<div id="htmlWins">Wins: 0</div>
-<div id="htmlLosses">Losses: 0</div>
-<div id="htmlDraws">Draws: 0</div>
+<table style="width:40%">
+  <tr>
+    <td id="htmlWins">Wins: 0</td>
+    <td id="htmlLosses">Losses: 0</td>
+    <td id="htmlDraws">Draws: 0</td>
+  </tr>
+</table>
+
+<div id="result"></div>
 
 </body>
 </html>
+

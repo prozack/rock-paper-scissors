@@ -42,23 +42,23 @@ var gameOutcome = function(){
 	  wins++;
 	  var win = winner(choice);
 	  var lose = loser(opponentChoice);
-	  document.getElementById("yourChoice").innerHTML = "You chose: " + win;
-	  document.getElementById("botChoice").innerHTML = "Opponent chose: " + lose;
+	  document.getElementById("yourChoice").innerHTML = win;
+	  document.getElementById("botChoice").innerHTML = lose;
 	  //write to HTML with updated score
 	  document.getElementById("htmlWins").innerHTML = "Wins: " + wins;
   } else if (choice === 'rock' && opponentChoice === 'paper' || choice === 'scissors' && opponentChoice === 'rock' || choice === 'paper' && opponentChoice === 'scissors'){
       losses++;
       var win = winner(opponentChoice);
       var lose = loser(choice)
-	  document.getElementById("yourChoice").innerHTML = "You chose: " + lose;
-	  document.getElementById("botChoice").innerHTML = "Opponent chose: " + win;
+	  document.getElementById("yourChoice").innerHTML = lose;
+	  document.getElementById("botChoice").innerHTML = win;
       document.getElementById("htmlLosses").innerHTML = "Losses: " + losses;
   } else {
 	  draws++;
 	  var draw1 = drawer(choice);
 	  var draw2 = drawer(opponentChoice);
-	  document.getElementById("yourChoice").innerHTML = "You chose: " + draw1;
-	  document.getElementById("botChoice").innerHTML = "Opponent chose: " + draw2;
+	  document.getElementById("yourChoice").innerHTML = draw1;
+	  document.getElementById("botChoice").innerHTML = draw2;
 	  document.getElementById("htmlDraws").innerHTML = "Draws: " + draws;
   }
   //resetting variables after outcome determined
@@ -82,17 +82,17 @@ var endOfGame = function() {
 //functions to create html depending on outcomes
 var winner = function(selection) {
 	var string = selection;
-	return "<img src='images/" + string +".png' style='background-color:green;' display='block' width=130px height=130px>";
+	return "<img src='images/" + string +".png' style='background-color:green;'>";
 }
 
 var loser = function(selection) {
 	var string = selection;
-	return "<img src='images/" + string +".png' style='background-color:red;' display='block' width=130px height=130px>";
+	return "<img src='images/" + string +".png' style='background-color:red;'>";
 }
 
 var drawer = function(selection) {
 	var string = selection;
-	return "<img src='images/" + string +".png' style='background-color:yellow;' display='block' width=130px height=130px>";
+	return "<img src='images/" + string +".png' style='background-color:yellow;'>";
 }
 
 //function called when restart button pressed, resets game assets to play new round
@@ -108,8 +108,9 @@ var clearValues = function(){
     document.getElementById('gameRock').removeAttribute('disabled'); 
     document.getElementById('gamePaper').removeAttribute('disabled'); 
     document.getElementById('gameScissors').removeAttribute('disabled'); 
-    document.getElementById('yourChoice').innerHTML = "You chose: <img src='images/question.png' style='background-color:white;' width height=130 />";
-    document.getElementById('botChoice').innerHTML = "Opponent chose: <img src='images/question.png' style='background-color:white;' width height=130 />";
+    document.getElementById('yourChoice').innerHTML = "<img src='images/question.png' style='background-color:white;' />";
+    document.getElementById('botChoice').innerHTML = "<img src='images/question.png' style='background-color:white;' />";
+    document.getElementById('result').innerHTML = "";
 }
 
 

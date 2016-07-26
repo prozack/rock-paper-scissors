@@ -39,7 +39,8 @@ function startTimer() {
     //changes start button to restart game when first game ends 
     document.getElementById('startButton').setAttribute('value', 'Restart');
     //runs end of game calculation when timer reaches 0
-    alert(endOfGame());
+    var outcome = (endOfGame());
+    document.getElementById('result').innerHTML = outcome;
     //disables game buttons 
     document.getElementById('gameRock').setAttribute('disabled', 'disabled'); 
     document.getElementById('gamePaper').setAttribute('disabled', 'disabled'); 
