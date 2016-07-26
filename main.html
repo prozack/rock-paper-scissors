@@ -16,19 +16,23 @@
 
 <body>
 
-Instructions: Rock bashes Scissors.  Scissors cut Paper.  Paper covers Rock.
+Instructions: Rock breaks Scissors.  Scissors cut Paper.  Paper covers Rock.
 <br>
 The eternal struggle.
 <br>
 <br>
 
+Enter values for game length below then press start!
+<br>
 <form>
 Minutes: <input type="text" id="mins" value="0" /><br>
 Seconds: <input type="text" id="secs" value="0" maxlength="2" /><br>
 <input type="button" id="startButton" value="Start" onclick="startTimer(); clearValues()"/>
 </form>
 
+<div id="timer">
 Countdown Timer: <span id="displayMins">00</span>:<span id="displaySecs">00</span>
+</div>
 
 <br>
 <button type="button" class="game" id="gameRock" onclick="inputChoice('rock'); gameOutcome()" disabled><img src="images/rock.png"></button>

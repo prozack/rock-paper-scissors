@@ -13,11 +13,18 @@ function startTimer() {
     // ensures value from form is a number
     if (isNaN(userMins)) userMins = 0;
     if (isNaN(userSecs)) userSecs = 0;
+    
+    //if seconds input is larger than a minute
+    if (userSecs > 60) {
+    	userSecs -= 60;
+    	userMins += 1;
+    }
 
     // rewrite data in form fields to be sure that the fields for minutes and seconds contain integer number
     document.getElementById('mins').value = userMins;
     document.getElementById('secs').value = userSecs;
     startCount = 1;
+
     //toggles start button to disabled and enable all game buttons
     document.getElementById('startButton').setAttribute('disabled', 'disabled');     
     document.getElementById('gameRock').removeAttribute('disabled'); 
@@ -37,7 +44,7 @@ function startTimer() {
     document.getElementById('gameRock').setAttribute('disabled', 'disabled'); 
     document.getElementById('gamePaper').setAttribute('disabled', 'disabled'); 
     document.getElementById('gameScissors').setAttribute('disabled', 'disabled'); 
-    //return false to prevent timer reset
+    //return false to prevent timer reset and countdown
     return false;
   }
 

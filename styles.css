@@ -1,6 +1,11 @@
 body {
     background-color: black;
     color: #B2D23E;
+    font-family: 'Lucida Grande', Helvetica, Arial, Sans-Serif;
+}
+
+#timer {
+	font-size: 30px;
 }
 
 #startButton {
@@ -41,4 +46,19 @@ body {
     display: block;
     height: 130px;  
     width: 130px;
+}
+
+#htmlWins {
+	font-size: 40px;
+	color: green;
+}
+
+#htmlLosses {
+	font-size: 40px;
+	color: red;
+}
+
+#htmlDraws {
+	font-size: 40px;
+	color: yellow;
 }
